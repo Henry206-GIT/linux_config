@@ -16,7 +16,6 @@ chromium
 clang
 cmake
 cpio
-cudnn
 discord
 dkms
 docker
