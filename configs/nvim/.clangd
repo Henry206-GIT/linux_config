@@ -1,0 +1,36 @@
+CompileFlags:
+  CompilationDatabase: .
+  Add:
+    - "-xcuda"
+    - "--cuda-gpu-arch=sm_75"
+    - "--cuda-path=/opt/cuda"
+    - "-I/opt/cuda/include"
+    - "-I/opt/cuda/targets/x86_64-linux/include"
+    - "-std=c++17"
+    - "--no-cuda-version-check"
+    # GCC 15.2.1 Include-Pfade für Arch Linux
+    - "-isystem"
+    - "/usr/include/c++/15.2.1"
+    - "-isystem"
+    - "/usr/include/c++/15.2.1/x86_64-pc-linux-gnu"
+    - "-isystem"
+    - "/usr/include/c++/15.2.1/backward"
+    - "-isystem"
+    - "/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include"
+    - "-isystem"
+    - "/usr/include"
+  Remove:
+    - "-forward-unknown-to-host-compiler"
+    - "--expt-relaxed-constexpr"
+    - "-use_fast_math"
+    - "-ccbin*"
+    - "--generate-code*"
+
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+  Suppress:
+    - "unknown_cuda_version"
+
+Index:
+  Background: Build

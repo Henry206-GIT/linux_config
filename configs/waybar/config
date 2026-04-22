@@ -1,0 +1,23 @@
+{
+    "layer": "top",
+    "position": "right",
+    "width": 40,
+    "spacing": 0,
+    "exclusive": false,
+    "passthrough": true,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-right": 10,
+
+    "modules-left": ["custom/workspace-indicator"],
+    "modules-center": [],
+    "modules-right": [],
+
+    "custom/workspace-indicator": {
+        "exec": "~/.config/waybar/workspace-indicator.sh",
+        "return-type": "json",
+        "interval": 0.1,
+        "format": "{}",
+        "tooltip": false
+    }
+}

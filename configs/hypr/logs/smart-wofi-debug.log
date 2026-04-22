@@ -1,0 +1,99 @@
+[19:29:33] === smart-wofi gestartet ===
+[19:29:35] wofi Ausgabe: 'Discord 0.0.133
+Quitting secondary instance.
+blackbox: 4/15/2026, 7:29:34 PM GMT+2 0 
+
+----------------------------------------------
+blackbox: 4/15/2026, 7:29:34 PM GMT+2 1 Discord starting: {"releaseChannel":"stable","version":"0.0.133"}, modulepath: /home/henry/.config/discord/0.0.133/modules'
+[19:29:35] Binary: ''
+[19:29:35] Suche Client fuer Pattern: ''
+[19:29:35] Alle Clients: [{"class":"kitty","initialClass":"kitty","ws":21,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"kitty","initialClass":"kitty","ws":21,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"kitty","initialClass":"kitty","ws":22,"hidden":false,"mapped":true,"size":[1876,1036]},{"class":"kitty","initialClass":"kitty","ws":11,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"discord","initialClass":"discord","ws":11,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"firefox","initialClass":"firefox","ws":12,"hidden":false,"mapped":true,"size":[1876,1036]},{"class":"firefox","initialClass":"firefox","ws":1,"hidden":false,"mapped":true,"size":[2516,1396]}]
+[19:29:35] Gefundener Client: {"address":"0x55e16df2d660","mapped":true,"hidden":false,"at":[22,22],"size":[2516,1396],"workspace":{"id":1,"name":"1"},"floating":false,"monitor":0,"class":"firefox","title":"(134) Imagine Dragons - I'm So Sorry | Kung Fu Panda 3 // sub español - YouTube — Mozilla Firefox","initialClass":"firefox","initialTitle":"Mozilla Firefox","pid":8230,"xwayland":false,"pinned":false,"fullscreen":0,"fullscreenClient":0,"overFullscreen":true,"grouped":[],"tags":[],"swallowing":"0x0","focusHistoryID":3,"inhibitingIdle":false,"xdgTag":"","xdgDescription":"","contentType":"none","stableId":"180000ba"}
+[19:29:35] Springe zu WS 1, Fenster 0x55e16df2d660, Maus -> (1280, 720)
+[19:29:35] === smart-wofi gestartet ===
+[19:29:39] wofi Ausgabe: ''
+[19:29:39] Keine Auswahl, beende.
+[19:29:41] === smart-wofi gestartet ===
+[19:29:44] wofi Ausgabe: 'Discord 0.0.133
+Quitting secondary instance.
+blackbox: 4/15/2026, 7:29:43 PM GMT+2 0 
+
+----------------------------------------------
+blackbox: 4/15/2026, 7:29:43 PM GMT+2 1 Discord starting: {"releaseChannel":"stable","version":"0.0.133"}, modulepath: /home/henry/.config/discord/0.0.133/modules'
+[19:29:44] Binary: ''
+[19:29:44] Suche Client fuer Pattern: ''
+[19:29:44] Alle Clients: [{"class":"kitty","initialClass":"kitty","ws":21,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"kitty","initialClass":"kitty","ws":21,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"kitty","initialClass":"kitty","ws":22,"hidden":false,"mapped":true,"size":[1876,1036]},{"class":"kitty","initialClass":"kitty","ws":11,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"discord","initialClass":"discord","ws":11,"hidden":false,"mapped":true,"size":[931,1036]},{"class":"firefox","initialClass":"firefox","ws":12,"hidden":false,"mapped":true,"size":[1876,1036]},{"class":"firefox","initialClass":"firefox","ws":1,"hidden":false,"mapped":true,"size":[2516,1396]}]
+[19:29:44] Gefundener Client: {"address":"0x55e16df2d660","mapped":true,"hidden":false,"at":[22,22],"size":[2516,1396],"workspace":{"id":1,"name":"1"},"floating":false,"monitor":0,"class":"firefox","title":"(134) Imagine Dragons - I'm So Sorry | Kung Fu Panda 3 // sub español - YouTube — Mozilla Firefox","initialClass":"firefox","initialTitle":"Mozilla Firefox","pid":8230,"xwayland":false,"pinned":false,"fullscreen":0,"fullscreenClient":0,"overFullscreen":true,"grouped":[],"tags":[],"swallowing":"0x0","focusHistoryID":0,"inhibitingIdle":false,"xdgTag":"","xdgDescription":"","contentType":"none","stableId":"180000ba"}
+[19:29:44] Springe zu WS 1, Fenster 0x55e16df2d660, Maus -> (1280, 720)
+[19:33:49] === smart-wofi gestartet ===
+[19:33:56] Auswahl: 'Discord'
+[19:33:56] Exec: '/usr/bin/discord'
+[19:33:56] Binary: 'discord'
+[19:33:56] Suche Client fuer Pattern: 'discord'
+[19:33:56] Gefunden: 
+[19:33:56] Kein offenes Fenster fuer 'discord', starte neu.
+[19:33:56] Starte: /usr/bin/discord
+[19:33:58] === smart-wofi gestartet ===
+[19:33:59] Auswahl: 'Discord'
+[19:33:59] Exec: '/usr/bin/discord'
+[19:33:59] Binary: 'discord'
+[19:33:59] Suche Client fuer Pattern: 'discord'
+[19:33:59] Gefunden: {"address":"0x55e16dd8c5d0","mapped":true,"hidden":false,"at":[2582,22],"size":[931,511],"workspace":{"id":12,"name":"12"},"floating":false,"monitor":1,"class":"discord","title":"@Jule - Discord","initialClass":"discord","initialTitle":"@Jule - Discord","pid":551699,"xwayland":true,"pinned":false,"fullscreen":0,"fullscreenClient":0,"overFullscreen":true,"grouped":[],"tags":[],"swallowing":"0x0","focusHistoryID":0,"inhibitingIdle":false,"xdgTag":"","xdgDescription":"","contentType":"none","stableId":"18000054"}
+[19:33:59] Springe: WS=12 Addr=0x55e16dd8c5d0 Maus=(3047,277)
+[19:34:04] === smart-wofi gestartet ===
+[19:34:23] Auswahl: 'Discord'
+[19:34:23] Exec: '/usr/bin/discord'
+[19:34:23] Binary: 'discord'
+[19:34:23] Suche Client fuer Pattern: 'discord'
+[19:34:23] Gefunden: 
+[19:34:23] Kein offenes Fenster fuer 'discord', starte neu.
+[19:34:23] Starte: /usr/bin/discord
+[19:35:37] === smart-wofi gestartet ===
+[19:35:40] Auswahl: 'Firefox'
+[19:35:40] Exec: '/usr/lib/firefox/firefox %u'
+[19:35:40] Binary: 'firefox'
+[19:35:40] 'firefox' ist ausgeschlossen, starte direkt.
+[19:35:40] Starte: /usr/lib/firefox/firefox
+[19:35:42] === smart-wofi gestartet ===
+[19:35:43] === smart-wofi gestartet ===
+[19:35:44] === smart-wofi gestartet ===
+[19:35:48] === smart-wofi gestartet ===
+[19:35:57] Auswahl: 'Firefox'
+[19:35:57] Exec: '/usr/lib/firefox/firefox %u'
+[19:35:57] Binary: 'firefox'
+[19:35:57] 'firefox' ist ausgeschlossen, starte direkt.
+[19:35:57] Starte: /usr/lib/firefox/firefox
+[19:36:01] Keine Auswahl.
+[19:36:03] Keine Auswahl.
+[19:36:03] Keine Auswahl.
+[19:36:07] === smart-wofi gestartet ===
+[19:36:09] === smart-wofi gestartet ===
+[19:36:20] Auswahl: 'Discord'
+[19:36:20] Exec: '/usr/bin/discord'
+[19:36:20] Binary: 'discord'
+[19:36:20] Suche Client fuer Pattern: 'discord'
+[19:36:20] Gefunden: 
+[19:36:20] Kein offenes Fenster fuer 'discord', starte neu.
+[19:36:20] Starte: /usr/bin/discord
+[19:36:21] Auswahl: 'Discord'
+[19:36:21] Exec: '/usr/bin/discord'
+[19:36:21] Binary: 'discord'
+[19:36:21] Suche Client fuer Pattern: 'discord'
+[19:36:21] Gefunden: {"address":"0x55e16dd8c5d0","mapped":true,"hidden":false,"at":[3527,22],"size":[931,1036],"workspace":{"id":12,"name":"12"},"floating":false,"monitor":1,"class":"discord","title":"@Jule - Discord","initialClass":"discord","initialTitle":"@Jule - Discord","pid":551699,"xwayland":true,"pinned":false,"fullscreen":0,"fullscreenClient":0,"overFullscreen":true,"grouped":[],"tags":[],"swallowing":"0x0","focusHistoryID":10,"inhibitingIdle":false,"xdgTag":"","xdgDescription":"","contentType":"none","stableId":"18000054"}
+[19:36:21] Springe: WS=12 Addr=0x55e16dd8c5d0 Maus=(3992,540)
+[19:36:25] === smart-wofi gestartet ===
+[19:36:36] Auswahl: 'Discord'
+[19:36:36] Exec: '/usr/bin/discord'
+[19:36:36] Binary: 'discord'
+[19:36:36] Suche Client fuer Pattern: 'discord'
+[19:36:36] Gefunden: 
+[19:36:36] Kein offenes Fenster fuer 'discord', starte neu.
+[19:36:36] Starte: /usr/bin/discord
+[19:37:45] === smart-wofi gestartet ===
+[19:37:59] Auswahl: 'Discord'
+[19:37:59] Exec: '/usr/bin/discord'
+[19:37:59] Binary: 'discord'
+[19:37:59] Suche Client fuer Pattern: 'discord'
+[19:37:59] Gefunden: 
+[19:37:59] Kein offenes Fenster fuer 'discord', starte neu.
+[19:37:59] Starte: /usr/bin/discord

@@ -1,0 +1,5 @@
+window:
+  background_opacity: 0.75                 # 75 % Deckkraft
+  dynamic_background_opacity: true         # Dimmt bei Inaktivität
+  background_opacity_when_focused: 0.75
+  background_opacity_when_unfocused: 0.55

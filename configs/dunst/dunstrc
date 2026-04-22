@@ -1,0 +1,47 @@
+[global]
+    # Position oben rechts
+    origin = top-right
+    offset = 20x20
+    
+    # Größe
+    width = (300, 400)
+    height = 300
+    
+    # Styling
+    frame_width = 2
+    frame_color = "#d4af37"
+    separator_color = frame
+    font = Monospace 10
+    
+    # Transparenz und Rundung
+    background = "#1a1a1a"
+    foreground = "#ffffff"
+    corner_radius = 5
+    transparency = 10
+    
+    # Verhalten
+    timeout = 5
+    icon_position = left
+    max_icon_size = 64
+    progress_bar = true
+    progress_bar_height = 10
+    
+    # Animation
+    show_age_threshold = 60
+    idle_threshold = 120
+
+[urgency_low]
+    background = "#1a1a1a"
+    foreground = "#888888"
+    timeout = 5
+
+[urgency_normal]
+    background = "#1a1a1a"
+    foreground = "#ffffff"
+    timeout = 5
+
+[urgency_critical]
+    background = "#d32f2f"
+    foreground = "#ffffff"
+    frame_color = "#ff5252"
+    timeout = 0

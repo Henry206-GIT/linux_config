@@ -1,0 +1,26 @@
+window {
+    background-color: #1e1e2e;
+    border-radius: 10px;
+}
+
+#input {
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #313244;
+    color: #cdd6f4;
+}
+
+#entry {
+    padding: 5px;
+    color: #cdd6f4;  /* ← Das fehlt! Textfarbe für die Liste */
+}
+
+#entry:selected {
+    background-color: #45475a;
+    color: #cdd6f4;  /* ← Auch hier, für den ausgewählten Eintrag */
+}
+
+/* Styling für die Icons */
+#img {
+    margin-right: 10px;
+}

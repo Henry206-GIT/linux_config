@@ -1,0 +1,9 @@
+show=drun
+show_all=true
+insensitive=true
+hide_scroll=true
+width=600
+height=400
+prompt=Search...
+allow_images=true
+image_size=32

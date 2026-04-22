@@ -1,0 +1,101 @@
+# .clangd Configuration for CUDA Projects
+# Place this file in your project root and rename to .clangd
+# Adjust paths and settings according to your project
+
+# Global settings for all files
+CompileFlags:
+  Add:
+    # C++ Standard
+    - "-std=c++17"
+    # Reduce error limits for better debugging
+    - "-ferror-limit=0"
+
+  # Remove NVCC-specific flags that clang doesn't understand
+  Remove:
+    - "-Xfatbin*"
+    - "-gencode*"
+    - "--generate-code*"
+    - "-ccbin*"
+    - "--compiler-options*"
+    - "--expt-extended-lambda"
+    - "--expt-relaxed-constexpr"
+    - "-forward-unknown-to-host-compiler"
+    - "-Werror=cross-execution-space-call"
+    - "-rdc=*"
+    - "-Xcompiler*"
+    - "--gpu-architecture=*"
+    - "-arch=*"
+
+# CUDA-specific settings for .cu and .cuh files
+If:
+  PathMatch: .*\.cuh?$
+
+CompileFlags:
+  # CUDA Compiler Path (adjust if different on your system)
+  Compiler: /opt/cuda/bin/nvcc
+
+  Add:
+    # CUDA Path
+    - "--cuda-path=/opt/cuda"
+
+    # CUDA Version (adjust for your CUDA version)
+    - "-D__CUDACC_VER_MAJOR__=13"
+    - "-D__CUDACC_VER_MINOR__=0"
+
+    # GPU Architecture (adjust for your target GPU)
+    # SM90: RTX 4090, H100
+    # SM86: RTX 3090, A6000
+    # SM75: RTX 2080, T4
+    # SM70: V100
+    - "-D__CUDA_ARCH__=900"
+    - "-D__CUDA_ARCH_FEAT_SM90_ALL"
+
+    # Common CUDA feature flags
+    - "-DCUDA_13_0_SM90_FEATURES_SUPPORTED"
+    - "-D__INTELLISENSE__"
+    - "-D__CLANGD__"
+
+    # CUDA Include Paths
+    - "-I/opt/cuda/include"
+    - "-I/opt/cuda/targets/x86_64-linux/include"
+
+# Diagnostics Configuration
+Diagnostics:
+  # Suppress CUDA-specific warnings that clang doesn't understand
+  Suppress:
+    - "variadic_device_fn"
+    - "attributes_not_allowed"
+    - "cuda_compat_error"
+
+  # Clang-Tidy checks (optional, uncomment to enable)
+  # ClangTidy:
+  #   Add:
+  #     - "readability-*"
+  #     - "modernize-*"
+  #   Remove:
+  #     - "modernize-use-trailing-return-type"
+
+# InlayHints Configuration
+InlayHints:
+  Enabled: Yes
+  ParameterNames: Yes
+  DeducedTypes: Yes
+
+# Hover Configuration
+Hover:
+  ShowAKA: No
+
+# Index Configuration
+Index:
+  Background: Build
+  StandardLibrary: Yes
+
+# ---
+# Example GPU Architecture Values:
+# SM90 (Ada Lovelace): -D__CUDA_ARCH__=900 (RTX 4090, H100)
+# SM89 (Ada Lovelace): -D__CUDA_ARCH__=890 (RTX 4080, L40)
+# SM86 (Ampere): -D__CUDA_ARCH__=860 (RTX 3090, A6000)
+# SM80 (Ampere): -D__CUDA_ARCH__=800 (A100)
+# SM75 (Turing): -D__CUDA_ARCH__=750 (RTX 2080, T4)
+# SM70 (Volta): -D__CUDA_ARCH__=700 (V100)
+# SM61 (Pascal): -D__CUDA_ARCH__=610 (GTX 1080)

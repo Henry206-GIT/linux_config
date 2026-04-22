@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/henry/.config/nvim",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/test.dir/includes_CUDA.rsp  -ccbin /usr/bin/g++ -use_fast_math -std=c++17 \"--generate-code=arch=compute_75,code=[compute_75,sm_75]\" --expt-relaxed-constexpr -x cu -c /home/henry/.config/nvim/test.cu -o CMakeFiles/test.dir/test.cu.o",
+  "file": "/home/henry/.config/nvim/test.cu",
+  "output": "CMakeFiles/test.dir/test.cu.o"
+}
+]
