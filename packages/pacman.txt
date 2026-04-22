@@ -16,7 +16,6 @@ chromium
 clang
 cmake
 cpio
-cuda
 cudnn
 discord
 dkms
@@ -62,7 +61,6 @@ kodi
 less
 libpqxx
 libpulse
-libva-nvidia-driver
 libva-utils
 linux
 linux-firmware
@@ -90,11 +88,9 @@ noto-fonts-emoji
 npm
 nss-mdns
 ntfs-3g
-nvidia-open
 nvtop
 obsidian
 okular
-ollama-cuda
 opencv
 opencv-samples
 papirus-icon-theme
