@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # install.sh - Arch Linux Setup: Pakete installieren und Konfigurationen wiederherstellen
 
-set -euo pipefail
+set -uo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_FILE="$SCRIPT_DIR/install.log"
@@ -25,6 +25,26 @@ log_error() {
         "$timestamp" "$func" "$error_type" "$message" "$var_name" "$var_value" >> "$LOG_FILE"
 
     echo "[FEHLER] $func: $message" >&2
+}
+
+# multilib-Repository in /etc/pacman.conf aktivieren fuer Steam und 32-Bit-Pakete
+# Input: /etc/pacman.conf
+# Output: multilib aktiviert, Paketdatenbank aktualisiert
+enable_multilib() {
+    if grep -q "^\[multilib\]" /etc/pacman.conf; then
+        echo "[OK] multilib bereits aktiv"
+        return 0
+    fi
+
+    sudo sed -i '/^#\[multilib\]/{s/^#//;n;s/^#//}' /etc/pacman.conf
+
+    if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
+        log_error "enable_multilib" "ConfigError" "multilib konnte nicht aktiviert werden" "pacman.conf" "/etc/pacman.conf"
+        return 1
+    fi
+
+    sudo pacman -Sy --noconfirm
+    echo "[OK] multilib aktiviert"
 }
 
 # Pruefen ob das System Arch Linux ist
@@ -87,16 +107,21 @@ install_pacman_packages() {
         exit 1
     fi
 
-    local count
+    local count failed=0
     count=$(wc -l < "$pkg_file")
     echo "[...] $count offizielle Pakete werden installiert..."
 
-    if ! sudo pacman -S --needed --noconfirm - < "$pkg_file"; then
-        log_error "install_pacman_packages" "PackageError" "pacman Installation fehlgeschlagen" "pkg_file" "$pkg_file"
-        exit 1
-    fi
+    sudo pacman -Sy --noconfirm
 
-    echo "[OK] Offizielle Pakete installiert"
+    while IFS= read -r pkg; do
+        [[ -z "$pkg" ]] && continue
+        if ! sudo pacman -S --needed --noconfirm "$pkg" 2>/dev/null; then
+            log_error "install_pacman_packages" "PackageNotFound" "Paket nicht installierbar" "pkg" "$pkg"
+            ((failed++)) || true
+        fi
+    done < "$pkg_file"
+
+    echo "[OK] Offizielle Pakete installiert ($failed fehlgeschlagen)"
 }
 
 # AUR-Pakete aus aur.txt installieren
@@ -114,14 +139,17 @@ install_aur_packages() {
     count=$(wc -l < "$pkg_file")
     echo "[...] $count AUR-Pakete werden installiert..."
 
-    mapfile -t aur_pkgs < "$pkg_file"
+    local failed=0
 
-    if ! yay -S --needed --noconfirm "${aur_pkgs[@]}"; then
-        log_error "install_aur_packages" "AurError" "yay Installation fehlgeschlagen" "pkg_file" "$pkg_file"
-        exit 1
-    fi
+    while IFS= read -r pkg; do
+        [[ -z "$pkg" ]] && continue
+        if ! yay -S --needed --noconfirm "$pkg" 2>/dev/null; then
+            log_error "install_aur_packages" "AurError" "AUR-Paket nicht installierbar" "pkg" "$pkg"
+            ((failed++)) || true
+        fi
+    done < "$pkg_file"
 
-    echo "[OK] AUR-Pakete installiert"
+    echo "[OK] AUR-Pakete installiert ($failed fehlgeschlagen)"
 }
 
 # Konfigurationsordner nach ~/.config/ kopieren
@@ -175,6 +203,7 @@ echo "Log: $LOG_FILE"
 echo ""
 
 check_arch
+enable_multilib
 install_yay
 install_pacman_packages
 install_aur_packages
