@@ -143,7 +143,7 @@ install_aur_packages() {
 
     while IFS= read -r pkg; do
         [[ -z "$pkg" ]] && continue
-        if ! yay -S --needed --noconfirm "$pkg" 2>/dev/null; then
+        if ! yay -S --needed --noconfirm --nocleanmenu --nodiffmenu --removemake "$pkg" 2>/dev/null; then
             log_error "install_aur_packages" "AurError" "AUR-Paket nicht installierbar" "pkg" "$pkg"
             ((failed++)) || true
         fi
